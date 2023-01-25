@@ -53,18 +53,21 @@
       <div class="w-full">
         <!--params selector -->
         <div class="flex">
-          <buttons id="params" class="modifiers p-3 border" data-value="params"
+          <buttons
+            id="paramsbtn"
+            class="modifiers p-3 border hover:cursor-pointer "
+            data-value="params"
             >Params</buttons
           >
           <buttons
-            id="headers"
-            class="modifiers p-3 border border-l-0"
+            id="headersbtn"
+            class="modifiers p-3 border border-l-0 hover:cursor-pointer"
             data-value="headers"
             >Headers</buttons
           >
           <buttons
-            id="body"
-            class="modifiers p-3 border border-l-0"
+            id="bodybtn"
+            class="modifiers p-3 border border-l-0 hover:cursor-pointer"
             data-value="body"
             >Body</buttons
           >
@@ -73,41 +76,106 @@
           ></buttons>
         </div>
 
-        <div id="attachers"> <!-- views loads here --> </div>
+        <div id="attachers">
+          <!-- params -->
+          <div id="params" class="params pt-8 pb-16 border border-t-0 relative">
 
-        
+
+            <div id="queryParams" class="p-3 flex flex-col gap-5">
+              <!-- loads from js -->
+             
+            </div>
+
+            <button
+            id="addParamsBtn"
+            class="border px-4 py-2 rounded absolute bottom-3 left-3 border-green-500 text-green-500"
+          >
+            Add
+          </button>
+          </div>
+
+          <!-- headers -->
+          <div id="headers" class="pt-8 pb-16 border border-t-0 relative">
+            <div class="p-3 flex flex-col gap-5">
+              <div class="flex">
+                <input class="border w-2/5 h-8 rounded-l border-r-0" />
+                <input class="border w-2/5 border-r-0" />
+                <button
+                  class="border w-1/5 rounded-r border-red-500 text-red-500"
+                >
+                  Remove
+                </button>
+              </div>
+              <div class="flex">
+                <input class="border w-2/5 h-8 rounded-l border-r-0" />
+                <input class="border w-2/5 border-r-0" />
+                <button
+                  class="border w-1/5 rounded-r text-red-500 border-red-500"
+                >
+                  Remove
+                </button>
+              </div>
+              <button
+                class="border px-4 py-2 rounded absolute bottom-3 left-3 border-green-500 text-green-500"
+              >
+                Attach
+              </button>
+            </div>
+          </div>
+
+          <!-- body -->
+          <div id="body" class="w-full border h-32 border-t-0 p-3">
+            <textarea
+              class="w-full h-full resize-none outline-none p-3 font-thin text-xs border"
+            ></textarea>
+          </div>
+        </div>
       </div>
 
       <div class="flex flex-col gap-2">
         <h2 class="text-4xl">Response</h2>
-        <div class="flex font-light gap-6"> <h3>Status : 200</h3> <h3>Time : 300ms</h3> <h3>Size : 434kb</h3></div>
+        <div class="flex font-light gap-6">
+          <h3>Status : 200</h3>
+          <h3>Time : 300ms</h3>
+          <h3>Size : 434kb</h3>
+        </div>
 
         <div class="w-full">
-          <!--params selector -->
           <div class="flex">
-            <buttons class="modifiers p-3 border" data-value="params"
-              >Body</buttons
-            >
+            <buttons 
+            id="resBodyBtn"
+            class="response p-3 border hover:cursor-pointer" 
+            data-value="body"
+              >Body
+            </buttons>
             <buttons
-              class="modifiers p-3 border border-l-0"
+            id="resHeadersBtn"
+
+              class="response p-3 border border-l-0 hover:cursor-pointer"
               data-value="headers"
-              >Headers</buttons
             >
-            
+              Headers
+            </buttons>
+
             <buttons
               class="p-3 border w-full border-t-0 border-r-0 border-l-0"
             ></buttons>
           </div>
-  
-          <div id="attachers"> <!-- views loads here -->
-            
-            <div class="w-full  border h-32 border-t-0 p-3">
-              <textarea class="w-full h-full resize-none outline-none p-3 font-thin text-xs border" ></textarea>
+
+          <div id="response">
+            <!-- views  -->
+            <div id="responseBody" class="w-full border h-32 border-t-0 p-3">
+              <textarea
+                class="w-full h-full resize-none outline-none p-3 font-thin text-xs border"
+              ></textarea>
             </div>
-          
+
+            <div id="responseHeader" class="w-full border h-32 border-t-0 p-3">
+              <textarea
+                class="w-full h-full resize-none outline-none p-3 font-thin text-xs border"
+              ></textarea>
+            </div>
           </div>
-  
-          
         </div>
       </div>
     </main>
